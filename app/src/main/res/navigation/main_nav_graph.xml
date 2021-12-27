@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/signinFragment">
+
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.example.android.happyhour.login.SigninFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signinFragment_to_buyerMessagesFragment"
+            app:destination="@id/buyerMessagesFragment" />
+        <action
+            android:id="@+id/action_signinFragment_to_sellerMessagesFragment"
+            app:destination="@id/sellerMessagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/buyerMessagesFragment"
+        android:name="com.example.android.happyhour.read.BuyerMessagesFragment"
+        android:label="fragment_buyer_messages"
+        tools:layout="@layout/fragment_buyer_messages" >
+        <action
+            android:id="@+id/action_buyerMessagesFragment_to_messageDetailFragment"
+            app:destination="@id/messageDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellerMessagesFragment"
+        android:name="com.example.android.happyhour.read.SellerMessagesFragment"
+        android:label="fragment_seller_messages"
+        tools:layout="@layout/fragment_seller_messages" >
+        <action
+            android:id="@+id/action_sellerMessagesFragment_to_messageDetailFragment"
+            app:destination="@id/messageDetailFragment" />
+        <action
+            android:id="@+id/action_sellerMessagesFragment_to_sellerSendMessageFragment"
+            app:destination="@id/sellerSendMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messageDetailFragment"
+        android:name="com.example.android.happyhour.messageDetail.MessageDetailFragment"
+        android:label="fragment_message_detail"
+        tools:layout="@layout/fragment_message_detail" >
+        <action
+            android:id="@+id/action_messageDetailFragment_to_buyerMessagesFragment"
+            app:destination="@id/buyerMessagesFragment" />
+        <action
+            android:id="@+id/action_messageDetailFragment_to_sellerMessagesFragment"
+            app:destination="@id/sellerMessagesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellerSendMessageFragment"
+        android:name="com.example.android.happyhour.send.SellerSendMessageFragment"
+        android:label="fragment_seller_send_message"
+        tools:layout="@layout/fragment_seller_send_message" >
+        <action
+            android:id="@+id/action_sellerSendMessageFragment_to_sellerMessagesFragment"
+            app:destination="@id/sellerMessagesFragment" />
+    </fragment>
+</navigation>

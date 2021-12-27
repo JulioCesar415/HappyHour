@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".send.SellerSendMessageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/enterCompanyNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="@string/enter_company_name_edit_text"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/enterHappyHourMessageEditText"
+            android:layout_width="377dp"
+            android:layout_height="451dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/enter_happy_hour_message_edit_text"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="@+id/enterCompanyNameEditText"
+            app:layout_constraintStart_toStartOf="@+id/enterCompanyNameEditText"
+            app:layout_constraintTop_toBottomOf="@+id/enterCompanyNameEditText" />
+
+        <EditText
+            android:id="@+id/enterHappyHourEndTimeEditText"
+            android:layout_width="378dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="@string/enter_happy_hour_end_time_edit_text"
+            android:inputType="time"
+            app:layout_constraintBottom_toTopOf="@+id/sendHappyHourMessageButton"
+            app:layout_constraintEnd_toEndOf="@+id/enterHappyHourMessageEditText"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/enterHappyHourMessageEditText"
+            app:layout_constraintTop_toBottomOf="@+id/enterHappyHourMessageEditText"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/sendHappyHourMessageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/send_happy_hour_message_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterHappyHourMessageEditText"
+            app:layout_constraintVertical_bias="0.88" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

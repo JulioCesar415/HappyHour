@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".login.SigninFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:hint="@string/enter_email_hint"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.604" />
+
+        <EditText
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:ems="10"
+            android:hint="@string/enter_password_hint"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/emailTextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/emailTextView"
+            app:layout_constraintTop_toBottomOf="@+id/emailTextView"
+            app:layout_constraintVertical_bias="0.364" />
+
+        <CheckBox
+            android:id="@+id/companyCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_check_box"
+            app:layout_constraintBottom_toBottomOf="@+id/emailTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/emailTextView"
+            app:layout_constraintTop_toTopOf="@+id/emailTextView" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/login_button"
+            app:layout_constraintBottom_toTopOf="@+id/signupButton"
+            app:layout_constraintEnd_toEndOf="@+id/companyCheckBox"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/companyCheckBox" />
+
+        <Button
+            android:id="@+id/signupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_button"
+            app:layout_constraintBottom_toBottomOf="@+id/passwordTextView"
+            app:layout_constraintEnd_toEndOf="@+id/loginButton"
+            app:layout_constraintStart_toStartOf="@+id/loginButton"
+            app:layout_constraintTop_toTopOf="@+id/passwordTextView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
