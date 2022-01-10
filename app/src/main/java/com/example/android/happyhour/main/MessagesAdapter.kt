@@ -2,14 +2,15 @@ package com.example.android.happyhour.main
 
 
 import android.view.LayoutInflater
+import android.view.View
 import com.example.android.happyhour.database.Message
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.happyhour.R
-import com.example.android.happyhour.api.TextItemViewHolder
 
-class MessagesAdapter : RecyclerView.Adapter<TextItemViewHolder>(){
+
+class MessagesAdapter : RecyclerView.Adapter<MessagesAdapter.ViewHolder>(){
 //    hold list of Message. use adapter to expose data into RecyclerView API
     var data = listOf<Message>()
 
@@ -23,24 +24,30 @@ class MessagesAdapter : RecyclerView.Adapter<TextItemViewHolder>(){
     }
 
 //    creates viewHolders
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 //        inflate layout from xml
         val layoutInflater = LayoutInflater.from(parent.context)
 //        inflate layout
         val view = layoutInflater
-            .inflate(R.layout.text_item_view, parent, false) as TextView
-        return TextItemViewHolder(view)
+            .inflate(R.layout.list_item_company_name, parent, false)
+        return ViewHolder(view)
     }
 
 //    tells RecyclerView how to draw item. Takes two arguments. holder and position to bind
-    override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 //        position that needs to be bind
         val item = data[position]
+        val res = holder.itemView.context.resources
 //        set text of view in viewHolder
-        holder.textView.text = item.companyName
+        holder.businessName.text = item.companyName
     }
 
 //    tell recycler view how many items it will be adapting to
     override fun getItemCount() = data.size
+
+//    ViewHolder class extends RecyclerView.ViewHolder
+    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        val businessName: TextView = itemView.findViewById(R.id.companyNameTextViewList)
+    }
 
 }

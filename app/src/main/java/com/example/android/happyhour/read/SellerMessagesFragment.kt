@@ -41,7 +41,9 @@ class SellerMessagesFragment : Fragment() {
         binding.sellerMessagesList.adapter = adapter
 
         mainViewModel.messages.observe(viewLifecycleOwner, Observer {
-            adapter.data = it
+            it?.let {
+                adapter.data = it
+            }
         })
 
         binding.lifecycleOwner = this
