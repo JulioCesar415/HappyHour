@@ -4,7 +4,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.example.android.happyhour.database.Message
 
-@BindingAdapter("companyName")
+@BindingAdapter("companyNameFormatted")
 fun TextView.setCompanyNameFormatted(item: Message?){
     item?.let {
         text = item.companyName

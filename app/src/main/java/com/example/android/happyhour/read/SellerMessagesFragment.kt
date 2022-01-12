@@ -42,7 +42,8 @@ class SellerMessagesFragment : Fragment() {
 
         mainViewModel.messages.observe(viewLifecycleOwner, Observer {
             it?.let {
-                adapter.data = it
+//                call using submitList() to tell it a new version of list is available
+                adapter.submitList(it)
             }
         })
 
