@@ -53,6 +53,10 @@ class SellerMessagesFragment : Fragment() {
         binding.addHappyHourMessageButton.setOnClickListener {
             findNavController().navigate(SellerMessagesFragmentDirections.actionSellerMessagesFragmentToSellerSendMessageFragment())
         }
+
+        mainViewModel.name.observe(this, Observer { newName ->
+            binding.sellerMessagesTextView.text = mainViewModel.name.toString()
+        })
 //        return xml root
         return binding.root
     }
