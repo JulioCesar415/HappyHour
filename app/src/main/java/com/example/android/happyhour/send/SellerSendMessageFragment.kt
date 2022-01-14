@@ -14,8 +14,6 @@ import com.example.android.happyhour.main.MainViewModel
 
 class SellerSendMessageFragment : Fragment() {
 
-    private lateinit var viewModel: MainViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +24,7 @@ class SellerSendMessageFragment : Fragment() {
         )
 
 //        get viewModel
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
 
 //        set viewModel for dataBinding
 
